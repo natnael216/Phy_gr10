@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 10 Physics Mini App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Telegram Dark Style */
+        body {
+            background-color: #1e1e2d;
+            /* Telegram-style dark */
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        ::selection {
+            background: none;
+        }
+        html,
+        body {
+            height: 100%;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #55acee;
+            /* Highlight for title */
+        }
+        p {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            margin-top: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        #content-wrapper {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        @media screen {
+            body:after {
+                content: '';
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                pointer-events: none;
+                background: rgba(0, 0, 0, 0);
+                z-index: 9999;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content-wrapper">
+        <h1 id="title">Initializing...</h1>
+        <p id="content">Waiting for Telegram Web App data...</p>
+    </div>
+
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+        // Physics lesson topics for each deep link
+        const topics = {
+            "ab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcggggggab1gggggggggguukjnnnfhududhdhfhab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcggggggab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcgggggghhhhhjjjjjjjjjjjlllllllllllllllpppppppppppppppppppppppppppppppijihjfdhisccscncbvshiwdjxxsiajajxjxjhshsuqjsccghasdertrggfxvbnmmooplhteqazvavabxvbcgcssetxdfjfhdehejqfsvhsjrykfjsvbykfbfdfddssawwwedxcvafsvxbcncbncvmgmhmkhykpiipputuhdhsvshdhdhdbxvdbdbNewtonghggghghghghgh": {
+                title: "Unit 1",
+                content: `Vector Quantities
+Physical quantities can be classified into two categories. ✌️
+Physical quantities በሁለት ክፍል ሊከፈሉ ይችላሉ። ✌️
+Physical quantities that fall in the first category are those that can be completely specified by a number together with an appropriate unit of measurement. 🔢
+የመጀመሪያው Physical quantities ሲሆን በቁጥር እና በመለኪያ አሃድ(unit of measurement) ብቻ ሙሉ በሙሉ ሊገለጹ የሚችሉ ናቸው። 🔢
+For instance, it makes perfectly good sense to say that the length of an object is 1.42 m or that the mass of an object is 12.21 kg. 📏⚖️
+ለምሳሌ፣ የአንድ ነገር ርዝመት 1.42 ሜትር ነው ወይም የአንድ ነገር ክብደት 12.21 ኪሎግራም ነው ማለት sense ይሰጣል። 📏⚖️
+You do not have to add anything to the description of length or mass. 🚫
+ስርዝመት ላይ ወይም ክብደት ላይ አቅጣጫ ብንመጨመር sense አይሰጠም ምሳሌ 3kg ክብደት ያለውን በሚዛን መዝነንን 3kg ወደ ደቡብ ነው ክብደቱ ብንል sense የለውም ወይም 12m የሚረዝም እንጨት ለክተን ወደ ደቡብ 12m ነው ርዝመቱ ብንል sense አይሰጥም። 🚫
+Similarly, the statement that the density of water is 1000  kg/m3 is a complete description of density. 💧
+“የውሃ density mesure አድርገን 1000 ኪግ/ሜ³ ወደ ሰሜን ነው” ብንል ትርጉም የለውም። ስለዚህ የውሃ density 1000ኪግ/ሜ³ complete description of density ነው።🚫
+Quantities that can be specified in this simple and straightforward way are called scalar quantities. 💡
+በቀላል እና በግልጽ መንገድ ሊገለጹ የሚችሉ scalar quantities ይባላሉ። 💡
+Thus, scalar quantities are physical quantities that can be completely specified by a single number together with an appropriate unit of measurement. ✍️
+ስለዚህ፣ scalar quantities በቁጥር እና በተገቢው መለኪያ አሃድ ብቻ ሙሉ በሙሉ ሊገለጹ የሚችሉ physical quantitties ናቸው። ለምሳሌ 1000kg/m³ን ብንወስድ 1000 ቁጥር ሲሆን 1000kg/m³ ደግሞ unit of measurement ነው።✍️
+Time, distance, speed, length, volume, temperature, energy and power are other examples of scalar quantities. ⏱️
+ጊዜ፣ ርቀት፣ ፍጥነት (speed)፣ ርዝመት፣ መጠን (volume)፣ ሙቀት (temperature)፣ ኃይል (energy) እና ጉልበት (power) የscalar quantities ሌሎች ምሳሌዎች ናቸው። ⏱️
+On the other hand, quantities that fall in the second category are those which require both magnitude and direction for their complete description. ➡️
+ሁለተኛው Physical quantitie  ደግሞ በመጠን (magnitude) እና በአቅጣጫ (direction)የሚገለጹ ናቸው። ➡️
+A simple example is velocity. 🚂
+ምሳሌ ፍጥነት (velocity) ነው። 🚂
+The statement that the velocity of a train is 100 km/h does not make much sense unless you also tell the direction in which the train is moving. 🛤️
+የአንድ ባቡር ፍጥነት 100 km/h ስትሉ ባቡሩ ወደየትኛው አቅጣጫ እየተንቀሳቀሰ እንደሆነ እስካልተናገራችሁ ድረስ ብዙም  sesnse አይሰጥም። 🛤️
+Force is another such quantity. 💪
+ኃይል(Force)ም በመጠን እና በአቅጣጫ የሚገለጽ quantity ነው። 💪
+You must specify not only the magnitude of the force but also the direction in which the force is applied. 📍
+የኃይሉን መጠን ብቻ ሳይሆን ኃይሉ የተተገበረበትን አቅጣጫም ጭምር መግለጽ ይኖርብናል። 📍
+ለምሳሌ እናንተ የሆነ ነገር ስትገፈትሩ ወይም ስትስቡ፤የገፋችሁትን ወይም የሳባችሁበትን አቅጣጫ ትናገራላችሁ፣10N ወደ ደቡብ ወይም ወደ ምዕራብ  ስትሉ sense  ይሰጣል።
+Such quantities are called vectors. 📐
+እነዚህን quantities  ቬክተር(vectors) ይባላሉ። 📐
+A vector quantity has both magnitude and direction.🧲
+ቬክተር በመጠን እና በአቅጣጫ የሚገለጽ ነው። 🧲
+Displacement, acceleration, momentum, impulse, weight and electric field strength are other examples of vector quantities. 🏃
+Displacement፣ acceleration፣ momentum፣impulse፣weight እና የelectric field strength የvector quantities ሌሎች ምሳሌዎች ናቸው። 🏃
+` 
+            }
+        };
+
+        // Function to update page content
+        function updateContent(topicKey) {
+            const titleElement = document.getElementById("title");
+            const contentElement = document.getElementById("content");
+            const topic = topics[topicKey];
+
+            if (topic) {
+                titleElement.textContent = topic.title;
+                contentElement.textContent = topic.content;
+            } else {
+                titleElement.textContent = "Welcome to Grade 10 Physics tutorials – stay with us!";
+                contentElement.textContent = "";
+            }
+        }
+
+        // Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            let topicKey = null;
+
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.ready();
+                if (Telegram.WebApp.initDataUnsafe?.start_param) {
+                    topicKey = Telegram.WebApp.initDataUnsafe.start_param;
+                }
+
+                Telegram.WebApp.setBackgroundColor('#1e1e2d');
+                Telegram.WebApp.setHeaderColor('#1e1e2d');
+            }
+
+            // Fallback for testing in browser
+            if (!topicKey) {
+                const urlParams = new URLSearchParams(window.location.search);
+                topicKey = urlParams.get("topic");
+            }
+
+            updateContent(topicKey);
+        });
+    </script>
+</body>
+
+
+</html>
+
